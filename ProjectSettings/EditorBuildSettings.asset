@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SwipeCar.unity
-    guid: 06c4fb574db321c4c83949c09c16df6e
+    path: Assets/Scenes/CatEscape.unity
+    guid: fc1454388c390bb409f439e6a519ff87
   m_configObjects: {}

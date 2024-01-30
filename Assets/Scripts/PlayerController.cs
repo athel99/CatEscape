@@ -1,17 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-   
+    [SerializeField] private Button btnLeft;
+    [SerializeField] private Button btnRight;
+
     public float radius=1f;
 
-   
 
-    
-       
-        
+    private void Start()
+    {
+        //this.btnLeft.onClick.AddListener(this.LeftButtonClick); //대리자
+        //this.btnRight.onClick.AddListener(this.RightButtonClick);
+
+        this.btnLeft.onClick.AddListener(() => {   //람다 
+           
+        this.transform.Translate(-2,0,0);
+                
+
+        });
+        this.btnRight.onClick.AddListener(() => {
+            this.transform.Translate(2, 0, 0);
+
+        });
+
+
+    }
+
+
+
     void Update()
     {
       
@@ -49,4 +69,19 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+    public void LeftButtonClick()
+    {
+        //Debug.Log("왼쪽 버튼을 누르시오");
+      //  this.transform.Translate(-2,0,0);
+
+    }
+
+    public void RightButtonClick()
+    {
+        //Debug.Log("오른쪽 버튼을 누르시오");
+       // this.transform.Translate(2,0,0);
+
+
+    }
 }
