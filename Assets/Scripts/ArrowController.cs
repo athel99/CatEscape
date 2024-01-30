@@ -57,7 +57,7 @@ public class ArrowController : MonoBehaviour
 
         if (distance < sumRadius)//충돌할 경우
         {
-            Debug.LogFormat("충돌 {0} {1}",distance,sumRadius);// {}공간 에러!! 
+            //Debug.LogFormat("충돌 {0} {1}",distance,sumRadius); {}공간 에러!! 
             Destroy(this.gameObject);
 
            
