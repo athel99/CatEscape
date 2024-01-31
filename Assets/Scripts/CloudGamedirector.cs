@@ -12,6 +12,7 @@ public class CloudGamedirector : MonoBehaviour
 
     public void UpdateVelocityText(Vector2 velocity)
     {
+        //플레이어의 속도
         float velocityX = Mathf.Abs(velocity.x);
         this.velocityText.text = velocityX.ToString();
       
