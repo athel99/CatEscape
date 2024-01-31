@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         
 
         //키보드 입력을 받는 코드
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        /*if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             //Debug.Log("left move");
             transform.Translate(-2,0,0);
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("right move");
             transform.Translate(2, 0, 0);
 
-        }
+        }*/
 
         // 플레이어가 화면밖에 못나가게 하기
                 float clampX =
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void LeftButtonClick()
+    /*public void LeftButtonClick()
     {
         //Debug.Log("왼쪽 버튼을 누르시오");
       //  this.transform.Translate(-2,0,0);
@@ -83,5 +83,5 @@ public class PlayerController : MonoBehaviour
        // this.transform.Translate(2,0,0);
 
 
-    }
+    }*/
 }
