@@ -8,7 +8,7 @@ public class CatController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rbody;
     [SerializeField] private float jumpforce = 680f;
-    [SerializeField] private float moveforce = 0.003f;
+    [SerializeField] private float moveforce = 10f;
     [SerializeField] private CloudGamedirector gameDirector;
     private Animator anim;
     private bool isjump= false;
