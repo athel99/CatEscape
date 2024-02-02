@@ -15,8 +15,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private BombGameDirector gameDirector;
     
-    private float hitAnimLength = 0.133f;
-    private float dieAnimLength = 0.133f;
+    private float hitAnimLength = 34f;
+   // private float dieAnimLength = 0.133f;
 
     private State state;
     private float delta = 0;
