@@ -14,18 +14,20 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private Animator anim;
     [SerializeField] private BombGameDirector gameDirector;
-    
-    private float hitAnimLength = 34f;
-   // private float dieAnimLength = 0.133f;
+   
+
+    private float hitAnimLength = 0.133f;
+    private float dieAnimLength = 0.133f;
 
     private State state;
     private float delta = 0;
     private int maxHp = 2;
     private int hp;
-
+    private Rigidbody2D rb;
 
     void Start()
     {
+        this.rb = GetComponent<Rigidbody2D>();
         this.hp = this.maxHp; 
         Debug.LogFormat("{0}/{1}", this.hp, this.maxHp);
         this.gameDirector.UpdateHpText(this.hp, this.maxHp);
@@ -36,17 +38,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        //마우스를 클릭하면 hp -1 소모, 텍스트 표시, 애니 Hit 전환
-        if(Input.GetMouseButtonDown(0))
-        {
-            this.hp -= 1;
-            if (this.hp <= 0)
-            {
-                this.hp = 0;
-            }
-            this.gameDirector.UpdateHpText(this. hp, this.maxHp);
-            this.SetState(State.Hit);
-        }
+        
 
         switch (this.state)
         {
@@ -70,9 +62,11 @@ public class EnemyController : MonoBehaviour
                 break;
 
             case State.Dead:
-                this.delta = 0;
-                if (this.delta > this.hitAnimLength)
-                {   Destroy(this.gameObject);
+                this.delta += Time.deltaTime;
+                if (this.delta > this.dieAnimLength )
+                {
+                    this.delta = 0;
+                    Destroy(this.gameObject);
                 }
                 
                 break;
@@ -91,4 +85,31 @@ public class EnemyController : MonoBehaviour
             this.anim.SetInteger("State",(int)this.state);
         }
     }
+
+    //플레이어와 충돌하면 hp -1 소모, 텍스트 표시, 애니 Hit 전환
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            BombGuyController player = collision.gameObject.GetComponent<BombGuyController>(); // 플레이어 컴포넌트 가져오기
+            if (player.isHitting) // 플레이어가 Hit 중이면
+            {
+                this.hp -= 1;
+
+                if (this.hp <= 0)
+                {
+                    this.hp = 0;
+                }
+                this.gameDirector.UpdateHpText(this.hp, this.maxHp);
+                this.SetState(State.Hit);
+            }
+        }
+    }
+
+
+  
 }
+
+
+

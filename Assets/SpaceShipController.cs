@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class SpaceShipController : MonoBehaviour
 {
     public enum State 
@@ -10,13 +10,14 @@ public class SpaceShipController : MonoBehaviour
         Center, Left, Right
     }
     [SerializeField] private float Speed = 1f;
-    [SerializeField] private Vector2 horizBoundary; //d
+    [SerializeField] private Vector2 horizBoundary; //이동거리 제한
     [SerializeField] private Vector2 vertBoundary;
     [SerializeField] private BulletGenerator bulletGenerator; //프리팹가져오기
     [SerializeField] private Transform firePoint;
 
     private Rigidbody2D rb;
 
+  
 
     void Start()
     {
@@ -43,8 +44,6 @@ public class SpaceShipController : MonoBehaviour
 
 
 
-   
-
     void InCamera()
     {
         //화면밖으로 나가지않게 하기
@@ -54,7 +53,7 @@ public class SpaceShipController : MonoBehaviour
         this.rb.transform.position = new Vector2(clampX, clampY);
 
     }
-    void BulletFire()// 총알 발사하기
+     void BulletFire()// 총알 발사하기
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -64,7 +63,5 @@ public class SpaceShipController : MonoBehaviour
         }
     }
 
-
-
-
+   
 }
