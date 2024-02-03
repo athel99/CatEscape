@@ -6,6 +6,7 @@ public class BamsongiController : MonoBehaviour
 {
     private Rigidbody rbody;
     private ParticleSystem particle;
+    public Vector3 direct;
     void Start()
     {
         this.rbody = this.GetComponent<Rigidbody>();
@@ -24,6 +25,6 @@ public class BamsongiController : MonoBehaviour
 
     public void Shoot()
     {
-        this.rbody.AddForce(new Vector3(-3000, -300, -300));
+        this.rbody.AddForce(-direct * 2000);
     }
 }

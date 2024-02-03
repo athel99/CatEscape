@@ -6,43 +6,35 @@ using UnityEngine;
 public class BamsongiGenerator : MonoBehaviour
 {
     [SerializeField] GameObject bamsngiprefab;
-    public Rigidbody bamgo;
-
+   
     
-    void Start()
-    {
-        this.bamgo = GetComponent<Rigidbody>();
-
-
-    }
-
+    
    
     void Update()
     {
-         //화면을 터치하면 마우스 위치
+        //화면을 터치하면 밤송이 생성
 
         if (Input.GetMouseButtonDown(0))
         {
-          //  Debug.Log(Input.mousePosition);
+            Debug.Log(Input.mousePosition);
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            // Debug.Log(ray);
+
+            Debug.Log(ray);
+            Vector3 direct = Vector3.Normalize(ray.direction);
 
 
-            //Vector3 rayvector = new Vector3(ray.directon.x,ray.direction.y,ray.direction.z);
-
-          //  DrawArrow.ForDebug(ray.origin, ray.direction, 10, Color.red, ArrowType.Solid);
-
-              GameObject bam = UnityEngine.Object.Instantiate(this.bamsngiprefab);
-
-            //this.bamgo.Addforce(ray.direction,100f);
-                
-
-
-
-
-
+            GameObject Go = Instantiate(this.bamsngiprefab);
+            Go.GetComponent<BamsongiController>().direct = -direct; //밤송이가 날아가는 방향에 따라 조절해주기
 
         }
+
+
+
+
+
+
+
+
     }
 }
