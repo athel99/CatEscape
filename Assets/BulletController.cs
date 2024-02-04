@@ -21,7 +21,7 @@ public class BulletController : MonoBehaviour
         this.transform.Translate(Vector2.up * this.speed * Time.deltaTime);
 
         //화면 밖으로 나가면 사라지게
-        if (this.transform.position.y > 6.56f)
+        if (this.transform.position.y < -2f)
         {
             Destroy(this.gameObject);
         }

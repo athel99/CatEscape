@@ -5,15 +5,13 @@ using UnityEngine;
 using System.Linq;
 public class SpaceShipController : MonoBehaviour
 {
-    public enum State 
-        {
-        Center, Left, Right
-    }
+   
     [SerializeField] private float Speed = 1f;
     [SerializeField] private Vector2 horizBoundary; //이동거리 제한
     [SerializeField] private Vector2 vertBoundary;
     [SerializeField] private BulletGenerator bulletGenerator; //프리팹가져오기
     [SerializeField] private Transform firePoint;
+    
 
     private Rigidbody2D rb;
 
@@ -21,6 +19,7 @@ public class SpaceShipController : MonoBehaviour
 
     private bool isTrigger = false;
 
+    
 
     void Start()
     {
@@ -30,6 +29,8 @@ public class SpaceShipController : MonoBehaviour
 
     void Update()
     {
+
+        
         MoveControl();
 
         InCamera();
@@ -42,10 +43,15 @@ public class SpaceShipController : MonoBehaviour
     }
     void MoveControl()
     {
-         float moveX = Input.GetAxisRaw("Horizontal");
+       
+
+        float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         Vector3 dir = new Vector3(moveX, moveY, 0);
+
         this.transform.Translate(dir.normalized * this.Speed * Time.deltaTime);
+
+       
 
     }
 
