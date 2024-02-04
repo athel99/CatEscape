@@ -9,7 +9,7 @@ public class BulletController : MonoBehaviour
     public float speed=4f;
    private Vector3 pos;
      public GameObject explosion;
-    
+    public GameObject[] item;
 
     void Update()
     {
@@ -41,7 +41,14 @@ public class BulletController : MonoBehaviour
             //Æø¹ß ÇÁ¸®ÆÕ ¼³Á¤
               Instantiate(explosion,this.transform.position, Quaternion.identity);
 
+
+            int temp = UnityEngine.Random.Range(0, 2);
+            Instantiate(item[temp], this.transform.position, Quaternion.identity);
+           
+
         }
+
+
 
 
 

@@ -9,17 +9,14 @@ public class BombGuyController : MonoBehaviour
 {
 
 
-
-  
     [SerializeField] private Animator anim;
-     private Rigidbody2D rb;
+    private Rigidbody2D rb;
     [SerializeField] private float moveforce=10f;
-    public bool isHitting=false; // Hit 중인지
-
+    
     private void Start()
     {
         this.rb = GetComponent<Rigidbody2D>();
-
+        
     }
 
     
@@ -27,29 +24,10 @@ public class BombGuyController : MonoBehaviour
     {      
         Move();
         InCamera();
-        Attack();
-        HitEnd();
-
-
+       
     }
 
-    public void Attack()
-    {
-        if(Input.GetKey(KeyCode.Space))
-        {
-            isHitting = true; // Hit 상태로 변경
-            this.anim.SetInteger("State", 2); //공격
-           
-        }
-        
    
-
-    }
-    // Hit 애니메이션 종료 시 호출되는 함수
-    public void HitEnd()
-    {
-        isHitting = false; // Hit 상태 해제
-    }
 
 
 
@@ -86,7 +64,9 @@ public class BombGuyController : MonoBehaviour
         this.rb.AddForce(this.transform.right * dirX * moveforce);
 
     }
-    
+
+   
+
 
 
 }

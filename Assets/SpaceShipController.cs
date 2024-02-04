@@ -17,7 +17,8 @@ public class SpaceShipController : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    
+    public GameObject[] item;
+
 
 
     void Start()
@@ -64,6 +65,10 @@ public class SpaceShipController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+      
 
-   
+    }
+
 }

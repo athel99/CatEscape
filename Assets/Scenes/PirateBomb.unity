@@ -600,7 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 946094228}
   moveforce: 5
-  isHitting: 0
+  isHitting: 1
 --- !u!50 &992911281
 Rigidbody2D:
   serializedVersion: 4
