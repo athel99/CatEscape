@@ -19,6 +19,7 @@ public class SpaceShipController : MonoBehaviour
 
     public GameObject[] item;
 
+    private bool isTrigger = false;
 
 
     void Start()
@@ -34,6 +35,10 @@ public class SpaceShipController : MonoBehaviour
         InCamera();
 
         BulletFire();
+       
+
+
+
     }
     void MoveControl()
     {
@@ -55,20 +60,43 @@ public class SpaceShipController : MonoBehaviour
         this.rb.transform.position = new Vector2(clampX, clampY);
 
     }
-     void BulletFire()// 총알 발사하기
+
+    void BulletFire()// 우주선의 위치에 따라 총알 발사하기
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject bulletGo = this.bulletGenerator.CreateBullet();
+            
 
-            bulletGo.transform.position = this.firePoint.position;
+            if (!isTrigger)
+            {
+                GameObject bulletGo = this.bulletGenerator.CreateBullet();
+                bulletGo.transform.position = this.firePoint.position;
+
+
+            }
+            
+            if(isTrigger ==true)
+            {
+                GameObject bulletGo = this.bulletGenerator.CreateBullet2();
+                bulletGo.transform.position = this.firePoint.position;
+            }
+
+
+
+
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-      
+        if (other.tag=="Power")
+        {
+            Destroy(other.gameObject);
 
+            isTrigger =true;
+
+
+        }
     }
-
 }

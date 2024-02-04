@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BulletController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class BulletController : MonoBehaviour
    private Vector3 pos;
      public GameObject explosion;
     public GameObject[] item;
+   
 
     void Update()
     {
@@ -40,17 +42,13 @@ public class BulletController : MonoBehaviour
             Destroy(this.gameObject); //ÃÑ¾Ë ¼Ò¸ê 
             //Æø¹ß ÇÁ¸®ÆÕ ¼³Á¤
               Instantiate(explosion,this.transform.position, Quaternion.identity);
-
-
-            int temp = UnityEngine.Random.Range(0, 2);
-            Instantiate(item[temp], this.transform.position, Quaternion.identity);
            
+             int temp = UnityEngine.Random.Range(0, 3);
+            Instantiate(item[temp], this.transform.position, Quaternion.identity);
 
         }
 
-
-
-
+       
 
     }
 }

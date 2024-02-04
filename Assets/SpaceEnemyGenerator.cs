@@ -6,6 +6,7 @@ public class SpaceEnemyGenerator : MonoBehaviour
 {
     public GameObject enemyPrefab;
     private float delta;    //경과된 시간 변수 
+   
 
     void Update()
     {
@@ -26,4 +27,7 @@ public class SpaceEnemyGenerator : MonoBehaviour
             delta = 0;  //경과 시간을 초기화 
         }
     }
+
+   
+
 }
