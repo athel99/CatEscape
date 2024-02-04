@@ -11,6 +11,7 @@ public class BulletGenerator : MonoBehaviour
     public GameObject CreateBullet()
     {
         return Instantiate(this.bulletPrefab);
+
     }
 
 

@@ -17,7 +17,8 @@ public class SpaceShipController : MonoBehaviour
 
     private Rigidbody2D rb;
 
-  
+    
+
 
     void Start()
     {
@@ -62,6 +63,7 @@ public class SpaceShipController : MonoBehaviour
             bulletGo.transform.position = this.firePoint.position;
         }
     }
+
 
    
 }

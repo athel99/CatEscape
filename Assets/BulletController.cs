@@ -8,9 +8,8 @@ public class BulletController : MonoBehaviour
 {
     public float speed=4f;
    private Vector3 pos;
-  /// private Animator boom;
-
-    //private Vector3 boomPosition;
+     public GameObject explosion;
+    
 
     void Update()
     {
@@ -36,16 +35,11 @@ public class BulletController : MonoBehaviour
 
         if (collision.tag == "Enemy") //ÅÂ±× ¼³Á¤ 
         {
-           // this.boomPosition = this.gameObject.transform.position;      // ÃÑ¾Ë ÇöÀç À§Ä¡ º¯¼ö¿¡ ´ã±â.
-
             
-           // boom = Instantiate(boom, boomPosition, Quaternion.identity);
-       
-
-
-
             Destroy(collision.gameObject); //Àû ¼Ò¸ê
             Destroy(this.gameObject); //ÃÑ¾Ë ¼Ò¸ê 
+            //Æø¹ß ÇÁ¸®ÆÕ ¼³Á¤
+              Instantiate(explosion,this.transform.position, Quaternion.identity);
 
         }
 
