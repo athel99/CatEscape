@@ -12,13 +12,13 @@ public class SpaceEnemyGenerator : MonoBehaviour
     {
         delta += Time.deltaTime;  //이전 프레임과 현재 프레임 사이 시간 
         
-        if (delta > 2)  //3초보다 크다면 
+        if (delta > 3)  //3초보다 크다면 
         {
             //생성 
             GameObject go = UnityEngine.Object.Instantiate(this.enemyPrefab);
             //위치 재 설정 
             float randX = UnityEngine.Random.Range(-2.5f, 2.5f);
-            float randY = UnityEngine.Random.Range(player.transform.position.y+3f, player.transform.position.y + 7f);
+            float randY = UnityEngine.Random.Range(3f,6.5f);
 
 
             go.transform.position
