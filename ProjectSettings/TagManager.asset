@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Power
+  - Apple
+  - Bomb
   layers:
   - Default
   - TransparentFX

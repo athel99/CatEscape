@@ -5,8 +5,7 @@ using UnityEngine;
 public class SpaceEnemyController : MonoBehaviour
 {
     [SerializeField] private float speed = 1f;
-    [SerializeField] private float radius = 1f;
-
+    
    
 
     private GameObject playerGo;
