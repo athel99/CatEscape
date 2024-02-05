@@ -30,7 +30,8 @@ public class EndSceneGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            this.textScore.text = string.Format("{0}/{1}",this.score);
-
+            this.textScore.text = string.Format("ÃÑÁ¡¼ö : {0}",this.score);
+        this.textApple.text = string.Format("»ç°ú°¹¼ö : {0}", this.apple);
+            this.textBomb.text = string.Format("ÆøÅº°¹¼ö : {0}",this.bomb);
     }
 }

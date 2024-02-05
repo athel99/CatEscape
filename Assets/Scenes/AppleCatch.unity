@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -235, y: 49}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -868, y: -348}
+  m_SizeDelta: {x: 473.708, y: 143.102}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &12721347
 MonoBehaviour:
@@ -182,11 +182,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3fa3a4df59c433d4f91de567758d9ab3, type: 3}
-    m_FontSize: 50
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 50
+    m_MinSize: 0
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -253,6 +253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  apple: 0
+  bomb: 0
 --- !u!4 &249188610
 Transform:
   m_ObjectHideFlags: 0
@@ -302,8 +304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -819, y: 55}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -633, y: -170}
+  m_SizeDelta: {x: 716.256, y: 133.002}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &819701892
 MonoBehaviour:
@@ -327,11 +329,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3fa3a4df59c433d4f91de567758d9ab3, type: 3}
-    m_FontSize: 50
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 50
+    m_MinSize: 1
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -749,9 +751,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671b857576b5cbb43af3665abd23eabf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item:
-  - {fileID: 0}
-  - {fileID: 0}
+  apple: {fileID: 6167954616315246353, guid: 536808937a532b04894f8493797400d1, type: 3}
+  bomb: {fileID: 2575420932620306509, guid: 047bba4bbaea42b40a3892ca695d0ad9, type: 3}
 --- !u!4 &2128612278
 Transform:
   m_ObjectHideFlags: 0
