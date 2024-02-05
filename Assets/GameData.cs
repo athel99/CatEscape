@@ -40,4 +40,16 @@ public class GameData : MonoBehaviour
         return this.score;
 
     }
+
+    public float GetApple()
+    {
+        return this.apple;
+
+    }
+
+    public float GetBomb()
+    {
+        return this.bomb;
+
+    }
 }

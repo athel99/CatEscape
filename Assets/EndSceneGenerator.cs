@@ -16,7 +16,7 @@ public class EndSceneGenerator : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         this.gameData = GameObject.FindFirstObjectByType<GameData>();
@@ -30,8 +30,8 @@ public class EndSceneGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            this.textScore.text = string.Format("ÃÑÁ¡¼ö : {0}",this.score);
-        this.textApple.text = string.Format("»ç°ú°¹¼ö : {0}", this.apple);
-            this.textBomb.text = string.Format("ÆøÅº°¹¼ö : {0}",this.bomb);
+            this.textScore.text = string.Format("ÃÑ Á¡¼ö : {0}",this.score);
+        this.textApple.text = string.Format("»ç°ú °¹¼ö : {0}", this.apple);
+            this.textBomb.text = string.Format("ÆøÅº °¹¼ö : {0}",this.bomb);
     }
 }

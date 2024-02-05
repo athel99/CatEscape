@@ -12,8 +12,8 @@ public class BasketController : MonoBehaviour
     AudioSource audioSource;
 
     public float score { get; set; } //속성 ; 외부 접근 가능 ; //점수
-   // public float applehp { get; set; } //속성 ; 외부 접근 가능 ; //사과갯수
-   // public float bombhp { get; set; } //속성 ; 외부 접근 가능 ; //폭탄갯수 
+    public float apple { get; set; } //속성 ; 외부 접근 가능 ; //사과갯수
+    public float bomb { get; set; } //속성 ; 외부 접근 가능 ; //폭탄갯수 
 
 
     public System.Action onHit; //대리자 
@@ -66,6 +66,7 @@ public class BasketController : MonoBehaviour
         if (other.gameObject.tag == "Apple")
         {
             this.score +=  10f;
+            this.apple += 1;
             
             this.audioSource.PlayOneShot(this.appleSE);
             
@@ -74,8 +75,8 @@ public class BasketController : MonoBehaviour
         else if (other.gameObject.tag == "Bomb")
         {
             
-            this.score -=  -10f;
-                        
+            this.score -=  10f;
+            this.bomb += 1; 
             this.audioSource.PlayOneShot(this.bombSE);
 
         }
