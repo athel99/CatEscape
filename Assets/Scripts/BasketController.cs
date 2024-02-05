@@ -4,7 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class BasketController : MonoBehaviour
-{private GameData gameData; //게임데이터 저장소
+{
+    private GameData gameData; //게임데이터 저장소
 
     [SerializeField] private AudioClip appleSE;
     [SerializeField] private AudioClip bombSE;

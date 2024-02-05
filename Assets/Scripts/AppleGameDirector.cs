@@ -15,11 +15,11 @@ public class AppleGameDirector : MonoBehaviour
 
 
     [SerializeField] private GameData gameData;
-    
-   
-    
-    private Text scoreText;
-    private Text timeText;
+
+
+
+    [SerializeField] private Text scoreText;
+    [SerializeField] private Text timeText;
     private float done = 10f; //제한시간
 
     void Start()
