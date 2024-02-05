@@ -5,26 +5,16 @@ using UnityEngine;
 
 public class GameData : MonoBehaviour
 {
-    public float score;
-    public float apple;
-    public float bomb;
+    public float score=0;
+    public float apple=0;
+    public float bomb = 0;
 
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void UpdateData(float score, float apple, float bomb)
     {

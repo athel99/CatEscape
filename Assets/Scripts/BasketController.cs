@@ -4,8 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class BasketController : MonoBehaviour
-{
-    private GameData gameData; //게임데이터 저장소
+{private GameData gameData; //게임데이터 저장소
 
     [SerializeField] private AudioClip appleSE;
     [SerializeField] private AudioClip bombSE;
@@ -22,6 +21,9 @@ public class BasketController : MonoBehaviour
     {
         this.audioSource = this.GetComponent<AudioSource>();
         this.score = 0;
+        this.apple = 0;
+        this.bomb = 0;
+
     }
 
 

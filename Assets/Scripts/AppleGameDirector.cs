@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
+using System;
 
 public class AppleGameDirector : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class AppleGameDirector : MonoBehaviour
 
     [SerializeField] private GameData gameData;
     
-
+   
     
     private Text scoreText;
     private Text timeText;
@@ -27,9 +28,20 @@ public class AppleGameDirector : MonoBehaviour
         scoreText = this.score.GetComponent<Text>();
         timeText = this.time.GetComponent<Text>();
 
+        this.NextDoor();
+
         Invoke("ChangeScene", 10f);
     }
 
+    private void NextDoor()
+    {
+        GameObject basketGo = this.basket;
+        BasketController basketController = basketGo.GetComponent<BasketController>();
+        basketController.onHit = () =>
+        {
+            this.gameData.UpdateData(basketController.score, basketController.apple,basketController.bomb);
+        };
+    }
 
     void Update()
     {
