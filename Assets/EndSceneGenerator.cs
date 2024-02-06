@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class EndSceneGenerator : MonoBehaviour
@@ -13,7 +14,7 @@ public class EndSceneGenerator : MonoBehaviour
     public Text textApple;
     public Text textBomb;
     public Text textScore;
-
+    public Button btnLoadScene;
 
 
     
@@ -25,6 +26,13 @@ public class EndSceneGenerator : MonoBehaviour
         this.apple = this.gameData.apple;
         this.bomb = this.gameData.bomb;
 
+        this.btnLoadScene.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("AppleCatch");
+
+        });
+
+
     }
 
     // Update is called once per frame
@@ -33,5 +41,15 @@ public class EndSceneGenerator : MonoBehaviour
             this.textScore.text = string.Format("ÃÑ Á¡¼ö : {0}",this.score);
         this.textApple.text = string.Format("»ç°ú °¹¼ö : {0}", this.apple);
             this.textBomb.text = string.Format("ÆøÅº °¹¼ö : {0}",this.bomb);
+
+        this.btnLoadScene.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("AppleCatch");
+
+        });
+
+
     }
+
+
 }
