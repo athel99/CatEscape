@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -40,6 +41,14 @@ public class GameData : MonoBehaviour
     public float GetBomb()
     {
         return this.bomb;
+
+    }
+
+    public void Reset()
+    {
+       this.score=0;
+        this.apple=0;
+        this.bomb=0;
 
     }
 }

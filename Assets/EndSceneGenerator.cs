@@ -26,9 +26,15 @@ public class EndSceneGenerator : MonoBehaviour
         this.apple = this.gameData.apple;
         this.bomb = this.gameData.bomb;
 
+
+        Debug.LogFormat("{0}{1}{2}", gameData.score, gameData.apple, gameData.bomb);
+
         this.btnLoadScene.onClick.AddListener(() =>
         {
+            
             SceneManager.LoadScene("AppleCatch");
+            
+            this.gameData.Reset();
 
         });
 

@@ -69,7 +69,7 @@ public class ApplecatchGameDirector : MonoBehaviour
 
     void ChangeScene()
     {
-
+        Debug.LogFormat("{0}{1}{2}",gameData.score,gameData.apple,gameData.bomb);
         // 엔딩씬으로 전환
         SceneManager.LoadScene("AppleEnd");
 
