@@ -14,6 +14,8 @@ public class GameData : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
 
+
+
     }
     
 
@@ -44,11 +46,5 @@ public class GameData : MonoBehaviour
 
     }
 
-    public void Reset()
-    {
-       this.score=0;
-        this.apple=0;
-        this.bomb=0;
-
-    }
+   
 }

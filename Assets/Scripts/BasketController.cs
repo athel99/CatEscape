@@ -18,6 +18,8 @@ public class BasketController : MonoBehaviour
 
     public System.Action onHit; //´ë¸®ÀÚ 
 
+   
+
     private void Start()
     {
         this.audioSource = this.GetComponent<AudioSource>();
@@ -68,7 +70,7 @@ public class BasketController : MonoBehaviour
         Debug.LogFormat("{0}", other.gameObject.tag);
         if (other.gameObject.tag == "Apple")
         {
-            this.score +=  10f;
+            this.score +=  20f;
             this.apple += 1;
             
             this.audioSource.PlayOneShot(this.appleSE);

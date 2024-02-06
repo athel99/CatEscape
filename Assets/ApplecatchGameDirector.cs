@@ -16,7 +16,7 @@ public class ApplecatchGameDirector : MonoBehaviour
 
     [SerializeField] private Text scoreText;
     [SerializeField] private Text timeText;
-    private float done = 10f; //제한시간
+    private float timeLeft = 30f; //제한시간 30초
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class ApplecatchGameDirector : MonoBehaviour
 
         this.NextDoor();
 
-        Invoke("ChangeScene", 10f);
+        Invoke("ChangeScene",this.timeLeft);
     }
 
     private void NextDoor()
@@ -55,12 +55,16 @@ public class ApplecatchGameDirector : MonoBehaviour
     {
 
 
-        if (this.done > 0f)
+        if (this.timeLeft > 0f)
         {
 
-            this.done -= Time.deltaTime;
+            this.timeLeft -= Time.deltaTime;
 
-            this.timeText.text = string.Format("남은시간 {0:0.00}", this.done);
+            string minutes = Mathf.Floor(timeLeft / 60).ToString("00"); //Mathf.Floor 함수를 사용하여 소수점 이하를 버림
+            string seconds = Mathf.Floor(timeLeft % 60).ToString("00");
+            this.timeText.text = "남은시간 " + minutes + ":" + seconds;
+
+           
 
         }
 
